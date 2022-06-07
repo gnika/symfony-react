@@ -10,6 +10,10 @@ import './App.css';
 
 
 import Main from './components/Main';
+import CreateSalaire from './components/create-salaire.component';
+import SalaireList from './components/list-salaire.component';
+import CreateConge from './components/create-conge.component';
+import CongeList from './components/list-conge.component';
 class App extends Component {
   render() {
     return (
@@ -34,6 +38,26 @@ class App extends Component {
                                     path="/edit-student/:id"
                                     component={(props) => <EditStudent {...props}  />}
                                   />
+                                  <Route
+                                      exact
+                                      path="/create-salaire"
+                                      component={(props) => <CreateSalaire {...props}  />}
+                                    />
+                  <Route
+                      exact
+                      path="/list-salaire"
+                      component={(props) => <SalaireList {...props}  />}
+                    />
+                    <Route
+                        exact
+                        path="/create-conge"
+                        component={(props) => <CreateConge {...props}  />}
+                      />
+                    <Route
+                        exact
+                        path="/list-conge"
+                        component={(props) => <CongeList {...props}  />}
+                      />
           </switch>
         </div>
       </Router>

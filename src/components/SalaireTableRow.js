@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-class StudentTableRow extends Component {
+class SalaireTableRow extends Component {
 constructor(props) {
 super(props)
 this.deleteStudent = this.deleteStudent.bind(this)
@@ -12,7 +12,7 @@ if(confirm("are you sure wants to delete?"))
 {
     axios
     .delete(
-    'https://629ef3cd461f8173e4dc8dcd.mockapi.io/api/Employee/' + this.props.obj.id,
+    'https://629ef3cd461f8173e4dc8dcd.mockapi.io/api/salaire/' + this.props.obj.id,
     )
     .then((res) => {
     console.log('Employe successfully deleted!')
@@ -20,28 +20,22 @@ if(confirm("are you sure wants to delete?"))
     .catch((error) => {
     console.log(error)
     })
+    //window.location.reload();
     }
-    window.location.reload();
-    }
+}
+
+   // 
     render() {
     return (
     <tr>
-    <td>{this.props.obj.nom}</td>
-    <td>{this.props.obj.prenom}</td>
-    <td>{this.props.obj.email}</td>
-    <td>{this.props.obj.mdp}</td>
-    <td>{this.props.obj.tel}</td>
-    <td>{this.props.obj.grade}</td>
-    <td>{this.props.obj.salaire}</td>
-    <td>{this.props.obj.specialite}</td>
+    <td>{this.props.obj.id_emp}</td>
+    <td>{this.props.obj.taxes}</td>
+    <td>{this.props.obj.brut}</td>
+    <td>{this.props.obj.net}</td>
+    <td>{this.props.obj.avance}</td>
+    <td>{this.props.obj.mois}</td>
     <td>{this.props.obj.id}</td>
     <td>
-    <Link
-    className="edit-link" path={"product/:id"}
-    to={'/edit-student/' + this.props.obj.id}
-    >
-    Edit
-    </Link>
     <input type="reset"onClick={this.deleteStudent} className="btn btn-warning" value="Delete" />
 
     </td>
@@ -50,4 +44,4 @@ if(confirm("are you sure wants to delete?"))
     }
     }
 
-    export default StudentTableRow;
+    export default SalaireTableRow;

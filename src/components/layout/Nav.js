@@ -21,6 +21,18 @@ return (
             <li className="nav-item">
               <Link to="/student-list" className="nav-link" >liste</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/create-salaire" className="nav-link" >Créer un salaire</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/list-salaire" className="nav-link" >Liste des salaires</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/create-conge" className="nav-link" >Créer un congé</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/list-conge" className="nav-link" >Liste des congés</Link>
+            </li>
           </ul>
           
         </div>
